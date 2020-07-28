@@ -1,6 +1,5 @@
 - id: check-ipv6
   name: Check IPv6 case
   description: Check IPv6 literals are lower case
-  entry: ./check-ipv6
-  additional_dependencies: [ 'Regexp::IPv6' ]
-  language: perl
+  entry: hooks/check-ipv6.pl
+  language: script
