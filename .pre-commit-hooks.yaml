@@ -1,5 +1,5 @@
-- id: check-ipv6
+- id: check-ipv6-case
   name: Check IPv6 case
   description: Check IPv6 literals are lower case
-  entry: hooks/check-ipv6.pl
+  entry: hooks/check-ipv6-case.pl
   language: script
