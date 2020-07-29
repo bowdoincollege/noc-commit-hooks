@@ -44,7 +44,7 @@ while(<>) {
                           :colored($&,'on_red')    # highlight it
                           :gexr
                     /gex;
-    push @errs, "$ARGV line $.: $line";
+    push @errs, colored("$ARGV line $.:", 'green'), $line;
     s/$IPv6_re/lc($&)/ge if $fix;                  # downcase all IPv6 addresses on line
   }
 } continue {
