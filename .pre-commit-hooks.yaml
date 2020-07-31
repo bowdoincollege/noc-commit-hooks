@@ -3,3 +3,9 @@
   description: Check IPv6 literals are lower case
   entry: hooks/check-ipv6-case.pl
   language: script
+- id: check-dns-config
+  name: Check DNS config
+  description: Check bind9 DNS server configuration and zone files
+  pass_filenames: false
+  language: docker
+  entry: /usr/bin/check-dns-config

@@ -34,6 +34,7 @@ repos:
     rev: <commit hash or tag>
     hooks:
     -   id: check-ipv6-case
+    -   id: check-dns-config
 ```
 
 ### Install hook into repo
@@ -61,3 +62,15 @@ Check that all IPv6 literals are capitalized.
 
 The `-fix` and `-nofix` (default) options control whether the file is
 modified.
+
+### `check-dns-config`
+
+Check bind DNS server configuration and zone files
+
+Runs `named-checkconf` to check [ISC bind
+nameserver](https://www.isc.org/bind/) configuration files and zone
+configurations.  The script expects the repository to be organized with
+a toplevel directory for each host.  The toplevel `bind` directory is
+for common files, typically symlinked from the other directories.
+
+Requires `docker` installed on the local machine.
