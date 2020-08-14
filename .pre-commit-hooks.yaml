@@ -9,3 +9,9 @@
   pass_filenames: false
   language: docker
   entry: /usr/bin/check-dns-config
+- id: check-dhcp-config
+  name: Check dhcp config
+  description: Check ISC DHCP server configuration files
+  pass_filenames: false
+  language: docker
+  entry: /usr/bin/check-dhcp-config
