@@ -35,6 +35,7 @@ repos:
     hooks:
     -   id: check-ipv6-case
     -   id: check-macaddr-case
+        args: [ --fix ]
     -   id: check-dns-config
     -   id: check-dhcp-config
 ```
