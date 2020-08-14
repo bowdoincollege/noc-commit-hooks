@@ -98,3 +98,11 @@ top-level `include` directory for common files, and overwrites it with
 any files in the top-level host directories before running the checks.
 
 Requires `docker` installed on the local machine.
+
+### `check-dhcphost-format`
+
+Check ISC DHCP host entries match standard format.
+
+Checks agains a regex to match organizational standardized formatting of
+DHCP host entries.  Uses fuzzy matching to indicate location of possible
+errors.

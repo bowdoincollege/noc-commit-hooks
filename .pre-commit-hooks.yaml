@@ -8,6 +8,11 @@
   description: Check MAC addresses are lower case
   entry: hooks/check-macaddr-case.pl
   language: script
+- id: check-dhcphost-format
+  name: Check DHCP host entry format
+  description: Check DHCP host entries match standard format
+  entry: check-dhcphost-format
+  language: python
 - id: check-dns-config
   name: Check DNS config
   description: Check bind9 DNS server configuration and zone files
