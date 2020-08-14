@@ -34,6 +34,7 @@ repos:
     rev: <commit hash or tag>
     hooks:
     -   id: check-ipv6-case
+    -   id: check-macaddr-case
     -   id: check-dns-config
     -   id: check-dhcp-config
 ```
@@ -60,6 +61,13 @@ pre-commit init-templatedir ~/.git-template
 ### `check-ipv6-case`
 
 Check that all IPv6 literals are capitalized.
+
+The `-fix` and `-nofix` (default) options control whether the file is
+modified.
+
+### `check-macaddr-case`
+
+Check that all MAC addresses are lower case.
 
 The `-fix` and `-nofix` (default) options control whether the file is
 modified.
