@@ -15,13 +15,13 @@ order to prevent problematic commits.
 To install client-side, first [install the pre-commit package](https://pre-commit.com/#installation):
 
 ```bash
-pip install pre-commit
+brew install pre-commit
 ```
 
 or
 
 ```bash
-brew install pre-commit
+pip install pre-commit
 ```
 
 ### Hook config
