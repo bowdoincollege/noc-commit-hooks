@@ -26,7 +26,7 @@ pip install pre-commit
 
 ### Hook config
 
-Add a `.pre-commit-config.yaml` to the toplevel of the git repository.
+Add a `.pre-commit-config.yaml` to the top-level of the git repository.
 
 ```yaml
 repos:
@@ -80,7 +80,7 @@ Check bind DNS server configuration and zone files.
 Runs `named-checkconf` to check [ISC bind
 nameserver](https://www.isc.org/bind/) configuration files and zone
 configurations.  The script expects the repository to be organized with
-a toplevel directory for each host.  The toplevel `bind` directory is
+a top-level directory for each host.  The top-level `bind` directory is
 for common files, typically symlinked from the other directories.
 
 Requires `docker` installed on the local machine.
@@ -91,7 +91,7 @@ Check ISC DHCP server configuration files.
 
 Runs `dhcpd -t` to check [ISC DHCP daemon](https://www.isc.org/dhcp/)
 configuration files for any syntax errors.  The script expects a
-toplevel `include` directory for common files, and overwrites it with
-any files in the toplevel host directories before running the checks.
+top-level `include` directory for common files, and overwrites it with
+any files in the top-level host directories before running the checks.
 
 Requires `docker` installed on the local machine.
