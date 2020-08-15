@@ -61,7 +61,7 @@ pre-commit init-templatedir ~/.git-template
 
 ### `check-ipv6-case`
 
-Check that all IPv6 literals are capitalized.
+Check that all IPv6 literals are lower case.
 
 The `-fix` and `-nofix` (default) options control whether the file is
 modified.
