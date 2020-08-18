@@ -1,5 +1,8 @@
 # commit hooks
 
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+
 Commit hooks using the [pre-commit](https://pre-commit.com) framework.
 
 The hooks can be run client-side during development to give
