@@ -1,0 +1,56 @@
+# spaces in hostname
+host foo bar { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+
+# misspelled words
+host foo { harware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware-ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware ethrnet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fxed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-addess 192.0.2.1; }
+
+# extra spacing
+host foo  { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host  foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo {  hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware  ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware ethernet  00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab;  fixed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address  192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }  # comment
+
+# not enough spacing
+host foo {hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab;fixed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }# comment
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }#comment
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; } #comment
+
+# tftperver option
+# spaces in hostname
+host foo bar { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+
+# misspelled words
+host foo { harware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware-ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware ethrnet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fxed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-addess 192.0.2.1; }
+
+# extra spacing
+host foo  { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host  foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo {  hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware  ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware ethernet  00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware ethernet 00:00:5e:00:53:ab;  option tftpserver host1, host2; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address  192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }  # comment
+
+# not enough spacing
+host foo {hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware ethernet 00:00:5e:00:53:ab;option tftpserver host1, host2; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }# comment
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }#comment
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; } #comment

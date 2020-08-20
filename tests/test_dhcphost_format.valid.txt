@@ -1,0 +1,36 @@
+# different host names
+host 1 { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo-bar { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo-bar-1 { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host 1.baz { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo.baz { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo-bar.baz { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo-bar-1.baz { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+
+# variable spacing after fixed-address option
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1;}
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1;  }
+
+# optional comment
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; } # comment
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; } # comment with ; / () {} # special chars
+
+# tftpserver option
+# different host names
+host 1 { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo-bar { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo-bar-1 { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host 1.baz { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo.baz { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo-bar.baz { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo-bar-1.baz { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+
+# variable spacing after tftpserver option
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2;}
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2;  }
+
+# optional comment
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; } # comment
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; } # comment with ; / () {} # special chars
