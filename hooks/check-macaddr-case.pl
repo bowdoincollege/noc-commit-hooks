@@ -9,14 +9,12 @@ use Getopt::Long;
 use Term::ANSIColor;
 
 my $MAC_re = '([[:xdigit:]]{2}:){5}[[:xdigit:]]{2}';
-
-# disable colors if not connected to a terminal
-$ENV{'ANSI_COLORS_DISABLED'} = 1 unless -t STDERR;
-
 my @errs;
 my $fix;
-GetOptions('fix!' => \$fix) || usage();
+my $color = -t STDERR;    # default to using color if connected to tty
+GetOptions('fix!' => \$fix, 'color!' => \$color) || usage();
 $^I = '*' if $fix;
+$ENV{'ANSI_COLORS_DISABLED'} = not $color;
 usage() unless scalar @ARGV;
 
 # check each file
@@ -48,6 +46,6 @@ if (scalar @errs) {
 }
 
 sub usage {
-  print STDERR "$0 [--fix|--nofix] [files...]\n";
+  print STDERR "$0 [--fix|--nofix] [--color|--nocolor] [files...]\n";
   exit 1;
 }

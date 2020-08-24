@@ -28,13 +28,12 @@ $IPv6_re = "$G:($IPv6_re|$_)" for @tail;
 $IPv6_re = qq/:(:$G){0,5}((:$G){1,2}|:$IPv4)|$IPv6_re/;
 $IPv6_re =~ s/\(/(?:/g;
 
-# disable colors if not connected to a terminal
-$ENV{'ANSI_COLORS_DISABLED'} = 1 unless -t STDERR;
-
 my @errs;
 my $fix;
-GetOptions('fix!' => \$fix) || usage();
+my $color = -t STDERR;    # default to using color if connected to tty
+GetOptions('fix!' => \$fix, 'color!' => \$color) || usage();
 $^I = '*' if $fix;
+$ENV{'ANSI_COLORS_DISABLED'} = not $color;
 usage() unless scalar @ARGV;
 
 # check each file
@@ -66,6 +65,6 @@ if (scalar @errs) {
 }
 
 sub usage {
-  print STDERR "$0 [--fix|--nofix] [files...]\n";
+  print STDERR "$0 [--fix|--nofix] [--color|--nocolor] [files...]\n";
   exit 1;
 }

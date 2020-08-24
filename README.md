@@ -66,15 +66,17 @@ pre-commit init-templatedir ~/.git-template
 
 Check that all IPv6 literals are lower case.
 
-The `-fix` and `-nofix` (default) options control whether the file is
-modified.
+The `-fix` and `-nofix` (default) options control whether the file
+is modified.  Color output is enabled for terminal output, disabled
+otherwise; it can be forced with `--color` or `--nocolor`.
 
 ### `check-macaddr-case`
 
 Check that all MAC addresses are lower case.
 
-The `-fix` and `-nofix` (default) options control whether the file is
-modified.
+The `-fix` and `-nofix` (default) options control whether the file
+is modified.  Color output is enabled for terminal output, disabled
+otherwise; it can be forced with `--color` or `--nocolor`.
 
 ### `check-dns-config`
 
