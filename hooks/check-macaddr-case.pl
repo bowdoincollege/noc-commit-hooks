@@ -19,7 +19,7 @@ usage() unless scalar @ARGV;
 
 # check each file
 while (<>) {
-  if (/($MAC_re)/ and $1 =~ /[A-F]/) {
+  if (grep { /[A-F]/ } /($MAC_re)/g) {
 
     # for each MAC address in a line, highlight each set of capital hex chars
     (my $line = $_) =~ s{$MAC_re}{

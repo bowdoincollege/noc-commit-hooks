@@ -38,7 +38,7 @@ usage() unless scalar @ARGV;
 
 # check each file
 while (<>) {
-  if (/($IPv6_re)/ and $1 =~ /[A-F]/) {
+  if (grep { /[A-F]/ } /($IPv6_re)/g) {
 
     # for each IP in a line, highlight each set of capital hex chars
     (my $line = $_) =~ s{$IPv6_re}{
