@@ -44,7 +44,7 @@ if (scalar @errs) {
                        . ($fix ? "fixed" : "found")
                        . ":", 'red'), "\n";
   print STDERR @errs;
-  exit 1 unless $fix;
+  exit 1;
 }
 
 sub usage {
