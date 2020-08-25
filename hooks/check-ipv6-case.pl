@@ -28,8 +28,7 @@ $IPv6_re = "$G:($IPv6_re|$_)" for @tail;
 $IPv6_re = qq/:(:$G){0,5}((:$G){1,2}|:$IPv4)|$IPv6_re/;
 $IPv6_re =~ s/\(/(?:/g;
 
-my @errs;
-my $fix;
+my (@errs, $file, $fix);
 my $color = -t STDERR;    # default to using color if connected to tty
 GetOptions('fix!' => \$fix, 'color!' => \$color) || usage();
 $^I = '*' if $fix;
@@ -38,6 +37,7 @@ usage() unless scalar @ARGV;
 
 # check each file
 while (<>) {
+  $. = 1 if $file ne $ARGV;
   if (grep { /[A-F]/ } /($IPv6_re)/g) {
 
     # for each IP in a line, highlight each set of capital hex chars
@@ -52,6 +52,7 @@ while (<>) {
     s/$IPv6_re/lc($&)/ge if $fix;
   }
 } continue {
+  $file = $ARGV;
   print if $fix;
 }
 

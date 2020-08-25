@@ -9,8 +9,7 @@ use Getopt::Long;
 use Term::ANSIColor;
 
 my $MAC_re = '([[:xdigit:]]{2}:){5}[[:xdigit:]]{2}';
-my @errs;
-my $fix;
+my (@errs, $file, $fix);
 my $color = -t STDERR;    # default to using color if connected to tty
 GetOptions('fix!' => \$fix, 'color!' => \$color) || usage();
 $^I = '*' if $fix;
@@ -19,6 +18,7 @@ usage() unless scalar @ARGV;
 
 # check each file
 while (<>) {
+  $. = 1 if $file ne $ARGV;
   if (grep { /[A-F]/ } /($MAC_re)/g) {
 
     # for each MAC address in a line, highlight each set of capital hex chars
@@ -33,6 +33,7 @@ while (<>) {
     s/$MAC_re/lc($&)/ge if $fix;
   }
 } continue {
+  $file = $ARGV;
   print if $fix;
 }
 
