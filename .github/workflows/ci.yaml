@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: install dependencies for script hooks
+      run: sudo apt-get install perltidy
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+    - uses: pre-commit/action@v2.0.0
+
+  perl:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        perl: ['5.32', '5.30', '5.28']
+    name: perl ${{ matrix.perl }} on ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up perl
+      uses: shogo82148/actions-setup-perl@v1
+      with:
+        perl-version: ${{ matrix.perl }}
+    - run: perl -V
+    - name: Install perl dependencies
+      run: cpanm --installdeps .
+    - name: Run unit tests
+      run: prove -lv tests
+    - name: Check code coverage
+      run: cover -test
+
+  python:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+        python: ['3.6', '3.7', '3.8']
+    name: python ${{ matrix.python }} on ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up python ${{ matrix.python }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python }}
+    - name: Install tox
+      run: pip install tox
+    - name: Run tox
+      run: tox -e py

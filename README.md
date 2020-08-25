@@ -2,6 +2,7 @@
 
 [![Version: v1.4.0][version-badge]][changelog]
 [![License: GPL v3][license-badge]][license]
+[![CI status][ci-badge]][ci]
 [![pre-commit][pre-commit-badge]][pre-commit]
 
 Commit hooks using the [pre-commit](https://pre-commit.com) framework.
@@ -110,9 +111,11 @@ Checks agains a regex to match organizational standardized formatting of
 DHCP host entries.  Uses fuzzy matching to indicate location of possible
 errors.
 
-[changelog]: ./CHANGELOG.md
 [version-badge]: https://img.shields.io/badge/version-1.4.0-blue.svg
-[license]: ./LICENSE
 [license-badge]: https://img.shields.io/badge/License-GPLv3-blue.svg
-[pre-commit]: https://pre-commit.com
+[ci-badge]: https://github.com/bowdoincollege/noc-commit-hooks/workflows/ci/badge.svg
 [pre-commit-badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+[changelog]: ./CHANGELOG.md
+[license]: ./LICENSE
+[ci]: https://github.com/bowdoincollege/noc-commit-hooks/actions?query=workflow%3Aci
+[pre-commit]: https://pre-commit.com
