@@ -1,7 +1,8 @@
 # commit hooks
 
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Version: v1.4.0][version-badge]][changelog]
+[![License: GPL v3][license-badge]][license]
+[![pre-commit][pre-commit-badge]][pre-commit]
 
 Commit hooks using the [pre-commit](https://pre-commit.com) framework.
 
@@ -108,3 +109,10 @@ Check ISC DHCP host entries match standard format.
 Checks agains a regex to match organizational standardized formatting of
 DHCP host entries.  Uses fuzzy matching to indicate location of possible
 errors.
+
+[changelog]: ./CHANGELOG.md
+[version-badge]: https://img.shields.io/badge/version-1.4.0-blue.svg
+[license]: ./LICENSE
+[license-badge]: https://img.shields.io/badge/License-GPLv3-blue.svg
+[pre-commit]: https://pre-commit.com
+[pre-commit-badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
