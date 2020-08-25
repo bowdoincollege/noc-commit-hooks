@@ -1,13 +1,13 @@
 - id: check-ipv6-case
   name: Check IPv6 case
   description: Check IPv6 literals are lower case
-  entry: hooks/check-ipv6-case.pl
-  language: script
+  entry: check-ipv6-case.pl
+  language: perl
 - id: check-macaddr-case
   name: Check MAC address case
   description: Check MAC addresses are lower case
-  entry: hooks/check-macaddr-case.pl
-  language: script
+  entry: check-macaddr-case.pl
+  language: perl
 - id: check-dhcphost-format
   name: Check DHCP host entry format
   description: Check DHCP host entries match standard format

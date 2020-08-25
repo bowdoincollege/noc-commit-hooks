@@ -7,26 +7,7 @@
 use strict;
 use Getopt::Long;
 use Term::ANSIColor;
-
-# from Regexp::IPv6
-my $IPv4 =
-    "((25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})[.]"
-  . "(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})[.]"
-  . "(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2})[.]"
-  . "(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{1,2}))";
-my $G = "[0-9a-fA-F]{1,4}";
-my @tail = (":",
-            "(:($G)?|$IPv4)",
-            ":($IPv4|$G(:$G)?|)",
-            "(:$IPv4|:$G(:$IPv4|(:$G){0,2})|:)",
-            "((:$G){0,2}(:$IPv4|(:$G){1,2})|:)",
-            "((:$G){0,3}(:$IPv4|(:$G){1,2})|:)",
-            "((:$G){0,4}(:$IPv4|(:$G){1,2})|:)"
-           );
-my $IPv6_re = $G;
-$IPv6_re = "$G:($IPv6_re|$_)" for @tail;
-$IPv6_re = qq/:(:$G){0,5}((:$G){1,2}|:$IPv4)|$IPv6_re/;
-$IPv6_re =~ s/\(/(?:/g;
+use Regexp::IPv6 qw($IPv6_re);
 
 my (@errs, $file, $fix);
 my $color = -t STDERR;    # default to using color if connected to tty
