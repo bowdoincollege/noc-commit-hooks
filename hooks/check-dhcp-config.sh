@@ -22,7 +22,7 @@ if type "$DHCPD" >/dev/null 2>&1; then
         # only output the actual errors
         echo -e "$OUTPUT" | sed -n '/^PID file/,/^Configuration file errors encountered/{//!p}'
         echo
-        # bail out immediately if one server failes
+        # bail out immediately if one server fails
         # since almost all configs are common, others servers will likely fail too
         exit 1
       fi

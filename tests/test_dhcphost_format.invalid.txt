@@ -2,7 +2,7 @@
 host foo bar { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
 
 # misspelled words
-host foo { harware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixxed-address 192.0.2.1; }
 host foo { hardware-ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
 host foo { hardware ethrnet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
 host foo { hardware ethernet 00:00:5e:00:53:ab; fxed-address 192.0.2.1; }
@@ -31,7 +31,7 @@ host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; } #comm
 host foo bar { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
 
 # misspelled words
-host foo { harware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; optioon tftpserver host1, host2; }
 host foo { hardware-ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
 host foo { hardware ethrnet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
 host foo { hardware ethernet 00:00:5e:00:53:ab; fxed-address 192.0.2.1; }

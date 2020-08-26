@@ -13,15 +13,15 @@ my $ANSI_escape = qr/\e\[[0-9;]*m/;
 my $S;
 
 # run a hook script with varied input
-# test exit value and all conbinations of --fix/--nofix and --color/nocolor
+# test exit value and all combinations of --fix/--nofix and --color/nocolor
 sub test_script {
   $S = shift;
   my $valid   = shift;
   my $invalid = shift;
 
   script_compiles($S);
-  script_runs([ $S, '/tmp/nonexistent', '/dev/null' ], 'multiple files');
-  script_runs($S, { exit => 1 },                       'no args');
+  script_runs([ $S, '/tmp/nonexistent', '/dev/null' ], 'multiple file args');
+  script_runs($S, { exit => 1 }, 'no args');
   run_fails('invalid args', '', ['--not-implemeted']);
 
   # check valid entries individually

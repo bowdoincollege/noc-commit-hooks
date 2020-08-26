@@ -107,9 +107,9 @@ Requires `docker` installed on the local machine.
 
 Check ISC DHCP host entries match standard format.
 
-Checks agains a regex to match organizational standardized formatting of
-DHCP host entries.  Uses fuzzy matching to indicate location of possible
-errors.
+Checks against a regex to match organizational standardized formatting
+of DHCP host entries.  Uses fuzzy matching to indicate location of
+possible errors.
 
 [version-badge]: https://img.shields.io/badge/version-1.4.0-blue.svg
 [license-badge]: https://img.shields.io/badge/License-GPLv3-blue.svg
