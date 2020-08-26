@@ -23,7 +23,7 @@ sub test_script {
 
   script_compiles($S);
   script_runs([ $S, '/tmp/nonexistent', '/dev/null' ], 'multiple file args');
-  run_fail('no args');
+  script_runs($S, { exit => 1 }, 'no args');
   run_fail('invalid args', '', args => ['--not-implemeted']);
 
   # check valid entries individually
