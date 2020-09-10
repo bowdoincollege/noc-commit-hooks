@@ -1,0 +1,28 @@
+# comments should be ignored
+; comment
+    ; comment with whitespace
+; comment with CNAME data
+; comment with invalid CNAME 192.0.2.1 data
+hostname                        IN A     192.0.2.1 ; even with CNAME 192.0.2.1 in comment
+
+# other rr types should be ignored
+hostname                        IN A     192.0.2.1
+hostname                        IN AAAA  2001:db8:abcd::1
+hostname                        IN MX 10 hostname
+hostname                        A     192.0.2.1
+hostname                        AAAA  2001:db8:abcd::1
+hostname                        MX 10 hostname
+
+# CNAMEs
+hostname                        IN CNAME hostname
+hostname                        IN CNAME 3221225985
+hostname                        CNAME hostname
+hostname                        CNAME 3221225985
+host-with-cname-in-it           IN CNAME hostname
+host-with-cname-in-it           IN CNAME 3221225985
+host-with-cname-in-it           CNAME hostname
+host-with-cname-in-it           CNAME 3221225985
+
+# with tabs
+hostname		IN	CNAME	hostname
+hostname		CNAME		hostname

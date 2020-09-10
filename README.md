@@ -111,6 +111,15 @@ Checks against a regex to match organizational standardized formatting
 of DHCP host entries.  Uses fuzzy matching to indicate location of
 possible errors.
 
+### `check-dns-cname`
+
+Check if CNAME resource records point to an IP address.
+
+The BIND parser (used by `check-dns-config`) does not fail if the
+canonical name of a CNAME record looks like an IP address.  This is a
+common mistake; even though it is valid syntax, it is almost never what
+the user intended.
+
 [version-badge]: https://img.shields.io/badge/version-1.4.0-blue.svg
 [license-badge]: https://img.shields.io/badge/License-GPLv3-blue.svg
 [ci-badge]: https://github.com/bowdoincollege/noc-commit-hooks/workflows/ci/badge.svg

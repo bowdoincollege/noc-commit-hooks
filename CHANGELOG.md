@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Added
+
+- new `check-dns-cname` hook to check CNAME is not an IP
+
 ### Changed
 
 - move shared testing code to separate module

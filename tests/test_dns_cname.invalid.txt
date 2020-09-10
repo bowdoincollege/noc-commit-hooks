@@ -1,0 +1,17 @@
+# CNAME to IP
+hostname                        IN CNAME 192.0.2.1
+hostname                        IN CNAME 2001:db8:abcd::1
+hostname                        CNAME 192.0.2.1
+hostname                        CNAME 2001:db8:abcd::1
+
+# host with CNAME in it
+host-with-cname-in-it           IN CNAME 192.0.2.1
+host-with-cname-in-it           IN CNAME 2001:db8:abcd::1
+host-with-cname-in-it           CNAME 192.0.2.1
+host-with-cname-in-it           CNAME 2001:db8:abcd::1
+
+# with tabs
+hostname		IN	CNAME	192.0.2.1
+hostname		IN	CNAME	2001:db8:abcd::1
+hostname		CNAME		192.0.2.1
+hostname		CNAME		2001:db8:abcd::1
