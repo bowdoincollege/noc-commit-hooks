@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+### Changed
+
+- move shared testing code to separate module
+
 ## [v1.4.0] - 2020-08-25
 
 ### Added
