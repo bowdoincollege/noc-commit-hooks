@@ -15,7 +15,7 @@ PATTERNS = [
     r"host \S+ { hardware ethernet \S+; option tftpserver \S+, \S+;\s*}( # .*)?",
 ]
 STRICT = [regex.compile(p) for p in PATTERNS]
-FUZZY = [regex.compile("(?b)(?:" + p + "){e<=5}") for p in PATTERNS]
+FUZZY = [regex.compile("(?b)(?:" + p + "){e<=8}") for p in PATTERNS]
 
 
 def main(argv: Optional[Sequence[str]] = None) -> int:

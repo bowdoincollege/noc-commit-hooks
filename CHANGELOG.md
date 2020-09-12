@@ -14,6 +14,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - move shared testing code to separate module
 - much improved `check-dhcphost-format` fuzzy matching colorization output
+- increased `check_dhcphost_format` fuzzy matching error threshold
 
 ## [v1.4.0] - 2020-08-25
 
