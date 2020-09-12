@@ -1,6 +1,6 @@
 # commit hooks
 
-[![Version: v1.4.0][version-badge]][changelog]
+[![Version: v1.5.0][version-badge]][changelog]
 [![License: GPL v3][license-badge]][license]
 [![CI status][ci-badge]][ci]
 [![pre-commit][pre-commit-badge]][pre-commit]
@@ -41,6 +41,7 @@ repos:
     -   id: check-ipv6-case
     -   id: check-macaddr-case
         args: [ --fix ]
+    -   id: check-dns-cname
     -   id: check-dns-config
     -   id: check-dhcp-config
 ```
@@ -113,14 +114,14 @@ possible errors.
 
 ### `check-dns-cname`
 
-Check if CNAME resource records point to an IP address.
+Check if any CNAME resource records point to an IP address.
 
 The BIND parser (used by `check-dns-config`) does not fail if the
 canonical name of a CNAME record looks like an IP address.  This is a
 common mistake; even though it is valid syntax, it is almost never what
 the user intended.
 
-[version-badge]: https://img.shields.io/badge/version-1.4.0-blue.svg
+[version-badge]: https://img.shields.io/badge/version-1.5.0-blue.svg
 [license-badge]: https://img.shields.io/badge/License-GPLv3-blue.svg
 [ci-badge]: https://github.com/bowdoincollege/noc-commit-hooks/workflows/ci/badge.svg
 [pre-commit-badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white

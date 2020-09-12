@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased]
+## [v1.5.0] - 2020-09-12
 
 ### Added
 
@@ -15,6 +15,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - move shared testing code to separate module
 - much improved `check-dhcphost-format` fuzzy matching colorization output
 - increased `check_dhcphost_format` fuzzy matching error threshold
+- updated perl build and test tooling
 
 ## [v1.4.0] - 2020-08-25
 
