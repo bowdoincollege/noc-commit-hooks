@@ -38,6 +38,12 @@ host foo { hardware ethernet 00:00:5e:00:53:ab; fxed-address 192.0.2.1; }
 host foo { hardware ethernet 00:00:5e:00:53:ab; fixed address 192.0.2.1; }
 host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-addess 192.0.2.1; }
 
+# extra letters
+host foo { hardware ethextraernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
+host foo { hardware ethextraernet 00:00:5e:00:53:ab; fixed-address 192.0.2.1; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; option tftpextraserver host1, host2; }
+host foo { hardware ethernet 00:00:5e:00:53:ab; fixed-addextraess 192.0.2.1; }
+
 # extra spacing
 host foo  { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
 host  foo { hardware ethernet 00:00:5e:00:53:ab; option tftpserver host1, host2; }
