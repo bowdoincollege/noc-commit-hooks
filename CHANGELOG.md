@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased]
+
+### Fixed
+
+- `check-dns-serial`: set successful exit status if no files modified
+
 ## [v1.6.0] - 2020-10-12
 
 ### Added

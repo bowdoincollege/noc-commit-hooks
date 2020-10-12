@@ -6,7 +6,7 @@ set -euo pipefail
 
 ZONEDIR="bind/namedb"
 fix=1
-changed=0
+err=0
 
 function usage() {
   echo "${0##*/} [-f|-n] [-h] [-d <zonedir>"
@@ -55,7 +55,7 @@ for file in $(git diff --staged --name-only --diff-filter=M); do
   [[ "$new_serial" -gt "$old_serial" ]] && continue
 
   echo "$file modified, but serial not updated."
-  changed=$((changed + 1))
+  err=$((err + 1))
 
   if [[ "$fix" -eq 1 ]]; then
     date=$(date +%Y%m%d)
@@ -82,4 +82,4 @@ for file in $(git diff --staged --name-only --diff-filter=M); do
 
 done
 
-[[ "$changed" -gt 0 ]] && exit 1
+[[ "$err" -eq 0 ]] && exit 0
