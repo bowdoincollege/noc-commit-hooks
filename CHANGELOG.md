@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [unreleased]
 
+### Changed
+
+- update `.pre-commit-config.yaml` revisions (`pre-commit autoupdate`)
+
 ### Fixed
 
 - `check-dns-serial`: set successful exit status if no files modified
