@@ -38,17 +38,27 @@ repos:
 -   repo: https://github.com/bowdoincollege/noc-commit-hooks
     rev: <commit hash or tag>
     hooks:
-    -   id: check-ipv6-case
+    -   id: check-dhcp-format
     -   id: check-macaddr-case
         args: [ --fix ]
-    -   id: check-dns-cname
-    -   id: check-dns-config
     -   id: check-dhcp-config
+```
+
+or
+
+```yaml
+repos:
+-   repo: https://github.com/bowdoincollege/noc-commit-hooks
+    rev: <commit hash or tag>
+    hooks:
+    -   id: check-dns-cname
+    -   id: check-ipv6-case
+    -   id: check-dns-config
 ```
 
 ### Install hook into repo
 
-To install the hook into a specific git repo:
+To install the hook locally into a specific git repo:
 
 ```bash
 sapphire:~/dns/(master=)$ pre-commit install
@@ -65,15 +75,28 @@ pre-commit init-templatedir ~/.git-template
 
 ## Hooks
 
-### `check-ipv6-case`
+### DHCP hooks
 
-Check that all IPv6 literals are lower case.
+#### `check-dhcp-config`
 
-The `-fix` and `-nofix` (default) options control whether the file
-is modified.  Color output is enabled for terminal output, disabled
-otherwise; it can be forced with `--color` or `--nocolor`.
+Check ISC DHCP server configuration files.
 
-### `check-macaddr-case`
+Runs `dhcpd -t` to check [ISC DHCP daemon](https://www.isc.org/dhcp/)
+configuration files for any syntax errors.  The script expects a
+top-level `include` directory for common files, and overwrites it with
+any files in the top-level host directories before running the checks.
+
+Requires `docker` installed on the local machine.
+
+#### `check-dhcphost-format`
+
+Check ISC DHCP host entries match standard format.
+
+Checks against a regex to match organizational standardized formatting
+of DHCP host entries.  Uses fuzzy matching to indicate location of
+possible errors.
+
+#### `check-macaddr-case`
 
 Check that all MAC addresses are lower case.
 
@@ -81,7 +104,18 @@ The `-fix` and `-nofix` (default) options control whether the file
 is modified.  Color output is enabled for terminal output, disabled
 otherwise; it can be forced with `--color` or `--nocolor`.
 
-### `check-dns-config`
+### DNS hooks
+
+#### `check-dns-cname`
+
+Check if any CNAME resource records point to an IP address.
+
+The BIND parser (used by `check-dns-config`) does not fail if the
+canonical name of a CNAME record looks like an IP address.  This is a
+common mistake; even though it is valid syntax, it is almost never what
+the user intended.
+
+#### `check-dns-config`
 
 Check bind DNS server configuration and zone files.
 
@@ -93,34 +127,15 @@ for common files, typically symlinked from the other directories.
 
 Requires `docker` installed on the local machine.
 
-### `check-dhcp-config`
+#### `check-ipv6-case`
 
-Check ISC DHCP server configuration files.
+Check that all IPv6 literals are lower case.
 
-Runs `dhcpd -t` to check [ISC DHCP daemon](https://www.isc.org/dhcp/)
-configuration files for any syntax errors.  The script expects a
-top-level `include` directory for common files, and overwrites it with
-any files in the top-level host directories before running the checks.
+The `-fix` and `-nofix` (default) options control whether the file
+is modified.  Color output is enabled for terminal output, disabled
+otherwise; it can be forced with `--color` or `--nocolor`.
 
-Requires `docker` installed on the local machine.
-
-### `check-dhcphost-format`
-
-Check ISC DHCP host entries match standard format.
-
-Checks against a regex to match organizational standardized formatting
-of DHCP host entries.  Uses fuzzy matching to indicate location of
-possible errors.
-
-### `check-dns-cname`
-
-Check if any CNAME resource records point to an IP address.
-
-The BIND parser (used by `check-dns-config`) does not fail if the
-canonical name of a CNAME record looks like an IP address.  This is a
-common mistake; even though it is valid syntax, it is almost never what
-the user intended.
-
+---
 [version-badge]: https://img.shields.io/badge/version-1.5.0-blue.svg
 [license-badge]: https://img.shields.io/badge/License-GPLv3-blue.svg
 [ci-badge]: https://github.com/bowdoincollege/noc-commit-hooks/workflows/ci/badge.svg

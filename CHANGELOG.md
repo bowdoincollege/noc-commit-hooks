@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased]
+
+### Changed
+
+- sort hooks in README alphabetically and by type
+- provide separate `.pre-commit.config.yaml` examples for each hook type
+
 ## [v1.5.0] - 2020-09-12
 
 ### Added
