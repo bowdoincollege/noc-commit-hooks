@@ -30,3 +30,8 @@
   pass_filenames: false
   language: docker
   entry: /usr/bin/check-dhcp-config
+- id: check-dns-serial
+  name: check DNS serial
+  language: script
+  entry: hooks/check-dns-serial.sh
+  pass_filenames: false

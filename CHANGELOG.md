@@ -6,6 +6,11 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [unreleased]
 
+### Added
+
+- new `check-dns-serial` hook to verify/ensure SOA serial is updated
+  for all modified zones
+
 ### Changed
 
 - sort hooks in README alphabetically and by type

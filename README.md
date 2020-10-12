@@ -53,6 +53,7 @@ repos:
     hooks:
     -   id: check-dns-cname
     -   id: check-ipv6-case
+    -   id: check-dns-serial
     -   id: check-dns-config
 ```
 
@@ -126,6 +127,16 @@ a top-level directory for each host.  The top-level `bind` directory is
 for common files, typically symlinked from the other directories.
 
 Requires `docker` installed on the local machine.
+
+#### `check-dns-serial`
+
+Check if serial in SOA RR is updated on all modified zone files.
+
+The options `-f` (default) to enable, or `-n` to disable automatically
+updating the serial number in any modified zone files.  The option `-d`
+specifies the repository subdirectory (default: bind/namedb) where
+primary zone files reside; only files in this directory or below will
+be checked/updated.
 
 #### `check-ipv6-case`
 
