@@ -1,6 +1,6 @@
 # commit hooks
 
-[![Version: v1.5.0][version-badge]][changelog]
+[![Version: v1.6.0][version-badge]][changelog]
 [![License: GPL v3][license-badge]][license]
 [![CI status][ci-badge]][ci]
 [![pre-commit][pre-commit-badge]][pre-commit]
