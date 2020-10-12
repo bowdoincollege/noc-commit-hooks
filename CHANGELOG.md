@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 
 - update `.pre-commit-config.yaml` revisions (`pre-commit autoupdate`)
+- add "Programming Language" to `setup.cfg`
 
 ### Fixed
 
