@@ -23,13 +23,13 @@
   description: Check bind9 DNS server configuration and zone files
   pass_filenames: false
   language: docker
-  entry: /usr/bin/check-dns-config
+  entry: check-dns-config
 - id: check-dhcp-config
   name: Check dhcp config
   description: Check ISC DHCP server configuration files
   pass_filenames: false
   language: docker
-  entry: /usr/bin/check-dhcp-config
+  entry: check-dhcp-config
 - id: check-dns-serial
   name: Check DNS serial
   language: script

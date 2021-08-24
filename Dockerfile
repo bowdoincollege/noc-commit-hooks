@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:buster
 
 # install any dependencies
 RUN apt-get update && \
@@ -18,5 +18,5 @@ RUN ln -s dhcp /etc/dhcp3
 # add all hook entrypoints
 ADD hooks/check-dns-config.sh /usr/bin/check-dns-config
 ADD hooks/check-dhcp-config.sh /usr/bin/check-dhcp-config
-RUN chmod a+x /usr/bin/check-dns-config && \
-    chmod a+x /usr/bin/check-dhcp-config
+RUN chmod a+rx /usr/bin/check-dns-config && \
+    chmod a+rx /usr/bin/check-dhcp-config
