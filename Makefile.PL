@@ -18,4 +18,4 @@ WriteMakefile(
                      "Devel::Cover" => "1.32",
                    },
   test => { TESTS => 'tests/*.t' }
-             );
+);
