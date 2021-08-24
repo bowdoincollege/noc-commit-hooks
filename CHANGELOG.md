@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [v1.6.2] - 2021-08-24
+
+### Changed
+
+- update `.pre-commit-config.yaml` revisions (`pre-commit autoupdate`)
+- set docker hooks to use Debian Buster image
+
+### Fixed
+
+- create consistent capitalization on hook definitions
+- fix docker entrypoint scripts permissions
+- remove docker entrypoint path (since `/usr/bin` is already in the container's `$PATH`)
+
 ## [v1.6.1] - 2020-10-12
 
 ### Changed

@@ -1,6 +1,6 @@
 # commit hooks
 
-[![Version: v1.6.1][version-badge]][changelog]
+[![Version: v1.6.2][version-badge]][changelog]
 [![License: GPL v3][license-badge]][license]
 [![CI status][ci-badge]][ci]
 [![pre-commit][pre-commit-badge]][pre-commit]
@@ -147,7 +147,7 @@ is modified.  Color output is enabled for terminal output, disabled
 otherwise; it can be forced with `--color` or `--nocolor`.
 
 ---
-[version-badge]: https://img.shields.io/badge/version-1.6.1-blue.svg
+[version-badge]: https://img.shields.io/badge/version-1.6.2-blue.svg
 [license-badge]: https://img.shields.io/badge/License-GPLv3-blue.svg
 [ci-badge]: https://github.com/bowdoincollege/noc-commit-hooks/workflows/ci/badge.svg
 [pre-commit-badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
