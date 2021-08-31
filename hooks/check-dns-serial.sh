@@ -66,11 +66,11 @@ for file in $(git diff --staged --name-only --diff-filter=M); do
     if [[ "$date" -gt "$old_date" ]]; then
       serial="${date}00"
     elif [[ "$date" -eq "$old_date" ]]; then
-      if [[ "$old_rev" -eq 99 ]]; then
+      if [[ "10#$old_rev" -eq 99 ]]; then
         echo "    too many revisions for today to increment \"$old_serial\"."
         continue
       fi
-      serial="${date}$(printf "%02d" $((old_rev + 1)))"
+      serial="${date}$(printf "%02d" $(("10#$old_rev" + 1)))"
     else
       echo "    current serial \"$old_serial\" is in the future, not updating."
       continue

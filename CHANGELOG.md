@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased]
+
+### Fixed
+
+- force bash to use base 10 for revision math (because of leading zero)
+
 ## [v1.6.2] - 2021-08-24
 
 ### Changed
