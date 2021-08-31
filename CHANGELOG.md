@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Fixed
 
 - force bash to use base 10 for revision math (because of leading zero)
+- use perl to update serial, as sed -i is different on macOS/Linux
 
 ## [v1.6.2] - 2021-08-24
 

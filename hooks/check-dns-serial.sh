@@ -76,7 +76,7 @@ for file in $(git diff --staged --name-only --diff-filter=M); do
       continue
     fi
 
-    sed -e "s-${new_serial}-${serial}-" -i '' "$file"
+    perl -pi -e "s-${new_serial}-${serial}-" "$file"
     echo "    changed serial to $serial"
   fi
 
