@@ -4,11 +4,15 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [unreleased]
+## [v1.6.4] - 2021-09-14
 
 ### Fixed
 
 - fix quoting for older bash versions
+
+### Changed
+
+- default branch is no `main`
 
 ## [v1.6.3] - 2021-08-31
 
