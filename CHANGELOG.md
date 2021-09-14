@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [unreleased]
+
+### Fixed
+
+- fix quoting for older bash versions
+
 ## [v1.6.3] - 2021-08-31
 
 ### Fixed

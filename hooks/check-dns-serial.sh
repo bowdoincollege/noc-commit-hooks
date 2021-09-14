@@ -70,7 +70,7 @@ for file in $(git diff --staged --name-only --diff-filter=M); do
         echo "    too many revisions for today to increment \"$old_serial\"."
         continue
       fi
-      serial="${date}$(printf "%02d" $(("10#$old_rev" + 1)))"
+      serial="${date}$(printf "%02d" $((10#$old_rev + 1)))"
     else
       echo "    current serial \"$old_serial\" is in the future, not updating."
       continue
