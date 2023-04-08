@@ -7,8 +7,7 @@ from util_test import check_hostentry
 from util_test import get_input_from_file
 from util_test import mock_run_from_terminal
 
-from hooks.check_dns_cname import is_ip
-from hooks.check_dns_cname import main
+from hooks.check_ascii import main
 
 valid_input = get_input_from_file("valid")
 invalid_input = get_input_from_file("invalid")
@@ -41,16 +40,3 @@ def test_invalid_hostentry_with_terminal(mocker, tmpdir, capsys, input):
     assert sys.stderr.isatty()
     assert check_hostentry(input, main, tmpdir) == 1
     assert ansi_escape.search(capsys.readouterr().out) == None
-
-
-@pytest.mark.parametrize(
-    "input",
-    [
-        ("192.0.2.1", True),
-        ("2001:DB8::1", True),
-        ("hostname", False),
-        ("3221225985", False),
-    ],
-)
-def test_is_ip(input):
-    assert is_ip(input[0]) == input[1]

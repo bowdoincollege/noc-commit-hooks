@@ -1,6 +1,6 @@
 # commit hooks
 
-[![Version: v1.6.4][version-badge]][changelog]
+[![Version: v1.6.5][version-badge]][changelog]
 [![License: GPL v3][license-badge]][license]
 [![CI status][ci-badge]][ci]
 [![pre-commit][pre-commit-badge]][pre-commit]
@@ -42,6 +42,7 @@ repos:
     -   id: check-macaddr-case
         args: [ --fix ]
     -   id: check-dhcp-config
+    -   id: check-ascii
 ```
 
 or
@@ -55,6 +56,7 @@ repos:
     -   id: check-ipv6-case
     -   id: check-dns-serial
     -   id: check-dns-config
+    -   id: check-ascii
 ```
 
 ### Install hook into repo
@@ -146,8 +148,12 @@ The `-fix` and `-nofix` (default) options control whether the file
 is modified.  Color output is enabled for terminal output, disabled
 otherwise; it can be forced with `--color` or `--nocolor`.
 
+#### `check-ascii`
+
+Check for non-ascii printable chars and error if any are found.
+
 ---
-[version-badge]: https://img.shields.io/badge/version-1.6.4-blue.svg
+[version-badge]: https://img.shields.io/badge/version-1.6.5-blue.svg
 [license-badge]: https://img.shields.io/badge/License-GPLv3-blue.svg
 [ci-badge]: https://github.com/bowdoincollege/noc-commit-hooks/workflows/ci/badge.svg
 [pre-commit-badge]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white

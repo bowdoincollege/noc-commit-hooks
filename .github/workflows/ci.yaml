@@ -11,7 +11,7 @@ jobs:
     - name: install dependencies for script hooks
       run: sudo apt-get install perltidy
     - uses: actions/checkout@v1
-    - uses: actions/setup-python@v1
+    - uses: actions/setup-python@v4
     - uses: pre-commit/action@v2.0.0
 
   perl:
@@ -40,7 +40,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        python: ['3.6', '3.7', '3.8']
+        python: ['3.9', '3.10', '3.11']
     name: python ${{ matrix.python }} on ${{ matrix.os }}
     steps:
     - uses: actions/checkout@v2

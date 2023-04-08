@@ -19,7 +19,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
 
     errs = []
     for filename in args.filenames:
-        with open(filename, "r") as inputfile:
+        with open(filename) as inputfile:
             for i, line in enumerate(inputfile):
                 line = line.rstrip()
                 if line.lstrip().startswith(";"):
