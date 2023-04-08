@@ -1,6 +1,6 @@
 use strict;
 use warnings;
-use lib qw(tests);
+use lib       qw(tests);
 use HookUtils qw( test_script );
 
 test_script(
