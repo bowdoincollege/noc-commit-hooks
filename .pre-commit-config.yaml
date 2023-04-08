@@ -39,10 +39,10 @@ repos:
   rev: v0.1.0
   hooks:
   - id: dockerfilelint
-#- repo: https://github.com/henryykt/pre-commit-perl
-#  rev: v0.0.5
-    #  hooks:
-    #  - id: perltidy
+- repo: https://github.com/henryykt/pre-commit-perl
+  rev: v0.0.4
+  hooks:
+  - id: perltidy
 - repo: https://github.com/asottile/reorder_python_imports
   rev: v3.9.0
   hooks:
