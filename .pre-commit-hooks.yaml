@@ -24,6 +24,11 @@
   pass_filenames: false
   language: docker
   entry: check-dns-config
+- id: require-ascii
+  name: Require ASCII
+  description: Ensure only printable ASCII Chars
+  entry: require-ascii
+  language: python
 - id: check-dhcp-config
   name: Check dhcp config
   description: Check ISC DHCP server configuration files
