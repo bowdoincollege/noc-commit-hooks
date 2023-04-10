@@ -25,7 +25,7 @@
   language: docker
   entry: check-dns-config
 - id: check-ascii
-  name: Require ASCII
+  name: Check ASCII
   description: Ensure only printable ASCII Chars
   entry: check-ascii
   language: python
